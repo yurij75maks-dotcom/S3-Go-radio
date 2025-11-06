@@ -24,6 +24,10 @@ https://code.visualstudio.com/
 Прошить файловую систему(data).
 При первом запуске подключится к wi-fi платы имя сети "S3-Go!-light-Setup" пароль "12345678", прописать имя и пароль вашей сети.
 Фото
+
+https://github.com/user-attachments/assets/048a29b1-905f-432f-9c62-cb85d12a1eee
+
+
 ![IMG_20251106_193919](https://github.com/user-attachments/assets/a839ecb1-c02e-46b1-a70b-7a8718b49b34)width="500"
 ![IMG_20251106_193906](https://github.com/user-attachments/assets/4b673357-a6c2-4fbe-9c64-25f2e437e369)
 ![IMG_20251106_193535](https://github.com/user-attachments/assets/2f54f73e-4fb3-40d6-aec2-c51426016941)
