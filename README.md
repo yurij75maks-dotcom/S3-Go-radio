@@ -11,6 +11,7 @@ https://4pda.to/forum/index.php?showtopic=1010378&view=findpost&p=125839228
 
 Прошивать с помощью программы VSC.
 https://code.visualstudio.com/
+Запустить программу, установить PlatformIO IDE.
 
 Скачать архив, распаковать. Путь к папке (и имя папки) не должен содержать кириллицу.
 Открыть папку в программе VSC.
