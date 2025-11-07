@@ -33,6 +33,11 @@ https://code.visualstudio.com/
 Прошить код.
 Прошить файловую систему (data).
 При первом запуске подключится к wi-fi платы имя сети "S3-Go!-light-Setup" пароль "12345678", прописать имя и пароль вашей сети.
+
+Библиотеки:
+- https://github.com/Bodmer/TJpg_Decoder.git
+- https://github.com/schreibfaul1/ESP32-audioI2S/archive/refs/tags/3.4.3.zip
+- https://github.com/moononournation/Arduino_GFX.git
 Фото:
 
 https://github.com/user-attachments/assets/048a29b1-905f-432f-9c62-cb85d12a1eee
