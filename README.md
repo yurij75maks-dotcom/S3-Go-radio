@@ -1,6 +1,5 @@
 # S3-Go!-radio
 
-<img src="https://github.com/user-attachments/assets/a839ecb1-c02e-46b1-a70b-7a8718b49b34" width="50%" />
 На создания этой программы меня вдохновил замечательный проект Ёрадио https://4pda.to/stat/go?u=https%3A%2F%2Fgithub.com%2Fe2002%2Fyoradio%2F&e=101867730&f=https%3A%2F%2F4pda.to%2Fforum%2Findex.php%3Fshowtopic%3D1010378%26st%3D1560
 Основная цель этого проекта — создание интернет-радио с графическим оформлением (фон фото). Он построен на чипе ESP32S3 N16R8 и экране ST7796(320*480)//другие экраны будут добавляться по мере запроса, библиотека позволяет добавить быстро//
 Если проблемы будут (а они как обычно есть), ссылка в телеграм канал https://t.me/radioS3Go
@@ -30,7 +29,9 @@ https://code.visualstudio.com/
 Открыть папку в программе VSC.
 Подождать скачивание библиотек и ядра.
 Прошить код.
-Прошить файловую систему (data).
+Прошить файловую систему (data). нажать "upload filesystem image"
+<img src="https://github.com/user-attachments/assets/c880c923-1d6f-4cac-8eb3-e780807a8c41" />
+
 При первом запуске подключится к wi-fi платы имя сети "S3-Go!-light-Setup" пароль "12345678", прописать имя и пароль вашей сети.
 
 Библиотеки:
@@ -41,12 +42,11 @@ https://code.visualstudio.com/
 
 https://github.com/user-attachments/assets/048a29b1-905f-432f-9c62-cb85d12a1eee
 
-
-![IMG_20251106_193919](https://github.com/user-attachments/assets/a839ecb1-c02e-46b1-a70b-7a8718b49b34)width="500"
-![IMG_20251106_193906](https://github.com/user-attachments/assets/4b673357-a6c2-4fbe-9c64-25f2e437e369)
-![IMG_20251106_193535](https://github.com/user-attachments/assets/2f54f73e-4fb3-40d6-aec2-c51426016941)
-![IMG_20251106_193506](https://github.com/user-attachments/assets/8c40a43a-6a98-4bf8-a2d5-7fa698b6132e)
-![IMG_20251106_193926](https://github.com/user-attachments/assets/a18ccc0e-9de5-4f83-abfb-bbf644187b30)
+<img src="https://github.com/user-attachments/assets/a839ecb1-c02e-46b1-a70b-7a8718b49b34" />
+<img src="https://github.com/user-attachments/assets/4b673357-a6c2-4fbe-9c64-25f2e437e369" />
+<img src="https://github.com/user-attachments/assets/2f54f73e-4fb3-40d6-aec2-c51426016941" />
+<img src="https://github.com/user-attachments/assets/8c40a43a-6a98-4bf8-a2d5-7fa698b6132e" />
+<img src="https://github.com/user-attachments/assets/a18ccc0e-9de5-4f83-abfb-bbf644187b30" />
 
 Скриншоты веб страницы:
 
