@@ -6,7 +6,14 @@
 
 Комплектующие:
 - esp32s3 n16r8 44 pin
-- dac5102
+- https://www.aliexpress.com/item/1005005592730189.html
+- dac5102/5100
+- https://www.aliexpress.com/item/1005006104038963.html
+- ![photo_2025-11-07_15-34-59](https://github.com/user-attachments/assets/2cce3f1e-06b2-4b7a-8eae-dc9c1c50d812)
+![5100](https://github.com/user-attachments/assets/29752642-1eb8-4b01-8574-87e5249ebbde)
+
+- https://www.aliexpress.com/item/1005008144198547.html
+- 
 - spi tft ST7796
 - кнопки, 5 штук.
 
