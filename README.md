@@ -39,7 +39,7 @@ https://code.visualstudio.com/
 Прошить файловую систему (data). нажать "upload filesystem image". В папку data можно положить плейлисты и фото. Или же потом с веба загрузить.
 
 <img src="https://github.com/user-attachments/assets/c880c923-1d6f-4cac-8eb3-e780807a8c41" width="25%"/>
-При первом запуске подключится к wi-fi платы имя сети "S3-Go!-light-Setup" пароль "12345678", прописать имя и пароль вашей сети.
+При первом запуске подключится к wi-fi платы имя сети "S3-Go!-light-Setup" пароль "12345678", ввести адрес http://192.168.4.1, прописать имя и пароль вашей сети.
 
 Библиотеки:
 - https://github.com/Bodmer/TJpg_Decoder.git
