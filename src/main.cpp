@@ -33,25 +33,30 @@ uint16_t colorClock = COLOR_CLOCK;
 uint16_t colorNeedleMain = COLOR_NEEDLE_MAIN;
 uint16_t colorNeedleRed = COLOR_NEEDLE_RED;
 
-// --- WiFi ---
-// const char* ssid = WIFI_SSID;
-// const char* password = WIFI_PASSWORD;
-
 // --- TFT Display - Auto-select based on config.h ---
 Arduino_DataBus *bus = new Arduino_ESP32SPI(TFT_DC, TFT_CS, TFT_SCLK, TFT_MOSI);
 
 #if defined(DISPLAY_ST7796)
   Arduino_GFX *gfx = new Arduino_ST7796(bus, TFT_RST);
-  #pragma message "Compiling for ST7796 display"
-#elif defined(DISPLAY_ST7789)
-  Arduino_GFX *gfx = new Arduino_ST7789(bus, TFT_RST, 3, true);
-  #pragma message "Compiling for ST7789 display"
+
+#elif defined(DISPLAY_ST7789_172_3)
+  Arduino_GFX *gfx = new Arduino_ST7789(bus, TFT_RST, TFT_ROTATION, true, 172, 320, 34, 0);
+
+#elif defined(DISPLAY_ST7789_172_0)
+  Arduino_GFX *gfx = new Arduino_ST7789(bus, TFT_RST, TFT_ROTATION, true, 172, 320, 34, 0);
+
+#elif defined(DISPLAY_ST7789_76_0)
+  Arduino_GFX *gfx = new Arduino_ST7789(bus, TFT_RST, TFT_ROTATION, false, 76, 284, 82, 18);
+
+#elif defined(DISPLAY_ST7789_76_3)
+  Arduino_GFX *gfx = new Arduino_ST7789(bus, TFT_RST, TFT_ROTATION, false, 76, 320, 82, 18);
+
 #elif defined(DISPLAY_ILI9341)
   Arduino_GFX *gfx = new Arduino_ILI9341(bus, TFT_RST);
-  #pragma message "Compiling for ILI9341 display"
+
 #elif defined(DISPLAY_ST7735)
   Arduino_GFX *gfx = new Arduino_ST7735(bus, TFT_RST);
-  #pragma message "Compiling for ST7735 display"
+
 #else
   #error "No display type defined! Please uncomment one DISPLAY_* in config.h"
 #endif
@@ -523,7 +528,6 @@ void checkStreamChange() {
 }
 
 // === Helper: Trim text by pixel width ===
-// === Helper: Trim text by pixel width ===
 String trimTextToWidth(Arduino_GFX *gfx, String text, int maxWidth) {
   int16_t x1, y1;
   uint16_t w, h;
@@ -695,7 +699,6 @@ void drawClockHMSS() {
                         clockW, clockH);
     // 👇 Добавь контур спрайта часов
   // gfx->drawRect(clockSpriteX, clockY, clockW, clockH, RGB565_CYAN);
-
 }
 
 // === ON-SCREEN FEEDBACK ===
@@ -1260,7 +1263,6 @@ void handleUpdateTFT() {
   server.send(200, "text/plain", "TFT Updated");
 }
 
-// Добавь функцию:
 void handleAPIColors() {
   String json = "{";
   json += "\"station\":" + String(colorStation) + ",";
@@ -1362,7 +1364,6 @@ void setup() {
   gfx->begin();
   gfx->fillRect(0, 0, gfx->width(), gfx->height(), RGB565_WHITE);
 
-  gfx->setRotation(TFT_ROTATION);
   pinMode(TFT_BL, OUTPUT);
   digitalWrite(TFT_BL, TFT_BRIGHTNESS);
 
@@ -1372,7 +1373,6 @@ void setup() {
     while (true) delay(1000);
   }
   Serial.println("LittleFS mounted");
-  
   Serial.printf("Total space: %d bytes\n", LittleFS.totalBytes());
   Serial.printf("Used space: %d bytes\n", LittleFS.usedBytes());
   Serial.printf("Free space: %d bytes\n", LittleFS.totalBytes() - LittleFS.usedBytes());
