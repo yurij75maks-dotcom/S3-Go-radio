@@ -6,16 +6,19 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-// === NETWORK ===
-// #define WIFI_SSID "Tibor"
-// #define WIFI_PASSWORD "fox25011970"
-
 // === TFT DISPLAY TYPE ===
 // Uncomment ONE display type:
 #define DISPLAY_ST7796
 //#define DISPLAY_ST7789
+//#define DISPLAY_ST7789_172_3 //горизонтально установить TFT_ROTATION 3
+//#define DISPLAY_ST7789_172_0 //вертикальный установить TFT_ROTATION 0 
+//#define DISPLAY_ST7789_76_3  //горизонтально установить TFT_ROTATION 3
+//#define DISPLAY_ST7789_76_0   //вертикальный установить TFT_ROTATION 0 
 //#define DISPLAY_ILI9341
 //#define DISPLAY_ST7735
+
+#define TFT_ROTATION 0       // 0-3: rotation angle
+#define TFT_BRIGHTNESS 255    // 0-255
 
 // === TFT DISPLAY PINS ===
 #define TFT_DC   9  
@@ -24,16 +27,12 @@
 #define TFT_BL   14
 #define TFT_MOSI 11
 #define TFT_SCLK 12
-#define NEXT_STREAM_PIN 45
 
 #define BTN_VOL_UP_PIN     4
 #define BTN_VOL_DOWN_PIN   5
 #define BTN_NEXT_PIN       6
 #define BTN_PREV_PIN       7
 #define BTN_PLAY_PAUSE_PIN 15
-
-#define TFT_ROTATION 0        // 0-3: rotation angle
-#define TFT_BRIGHTNESS 255    // 0-255
 
 // === AUDIO ===
 #define AUDIO_I2S_BCLK 16     // I2S bit clock
