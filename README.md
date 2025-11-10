@@ -77,4 +77,5 @@ https://github.com/user-attachments/assets/048a29b1-905f-432f-9c62-cb85d12a1eee
 ![06](https://github.com/user-attachments/assets/4e6cac1f-0dad-4284-9ab5-52e9590482e1)
 Фото на фон создавать соответственно разрешению экрана.
 При сохранении фото в фотошопе выбрать настройку "базовый оптимизированный"
+
 ![photoshop](https://github.com/user-attachments/assets/e95ff6d8-e2c6-4c6e-b7c7-53681563412b)
