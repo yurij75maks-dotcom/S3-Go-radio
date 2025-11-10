@@ -56,7 +56,7 @@ https://code.visualstudio.com/
 - https://github.com/schreibfaul1/ESP32-audioI2S/archive/refs/tags/3.4.3.zip
 - https://github.com/moononournation/Arduino_GFX.git
 - бонус русские шрифты https://github.com/immortalserg/AdafruitGFXRusFonts
-Как поменять шрифт: Прописываем в начале файла main.cpp имя нового шрифта например #include "Bahamas7.h", потом ищем в коде старый шрифт через ctrl+f, и меняем его имя. ВНИМАНИЕ!!! Внутри файла шрифта может быть прописано по другому, "const uint8_t Bahamas8pt8bBitmaps[] PROGMEM = {", значит нам надо взять "Bahamas8pt8b", получится так:
+Как поменять шрифт: Копируем новый шрифт в папку "src". Прописываем в начале файла main.cpp имя нового шрифта например #include "Bahamas8.h", потом ищем в коде старый шрифт через ctrl+f, и меняем его имя. ВНИМАНИЕ!!! Внутри файла шрифта может быть прописано по другому, "const uint8_t Bahamas8pt8bBitmaps[] PROGMEM = {", значит нам надо взять "Bahamas8pt8b", получится так:
 gfx->setFont(&Bahamas8pt8b);
 
 
