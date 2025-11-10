@@ -53,6 +53,7 @@ https://code.visualstudio.com/
 - https://github.com/Bodmer/TJpg_Decoder.git
 - https://github.com/schreibfaul1/ESP32-audioI2S/archive/refs/tags/3.4.3.zip
 - https://github.com/moononournation/Arduino_GFX.git
+- бонус русские шрифты https://github.com/immortalserg/AdafruitGFXRusFonts
 Фото:
 
 https://github.com/user-attachments/assets/048a29b1-905f-432f-9c62-cb85d12a1eee
