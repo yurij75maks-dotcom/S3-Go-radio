@@ -41,8 +41,8 @@ https://code.visualstudio.com/
 
 <img src="https://github.com/user-attachments/assets/c880c923-1d6f-4cac-8eb3-e780807a8c41" width="25%"/>
 При первом запуске подключится к wi-fi платы имя сети "S3-Go!-light-Setup" пароль "12345678", ввести адрес http://192.168.4.1, прописать имя и пароль вашей сети.
-![photo_2025-11-10_16-55-33](https://github.com/user-attachments/assets/a50fae03-4f8d-49fb-80dc-2f2b9dc3c7cc)
-![photo_2025-11-10_16-55-43](https://github.com/user-attachments/assets/7b07264d-4a27-44dd-9381-0d08c0295fd9)
+<img src="https://github.com/user-attachments/assets/a50fae03-4f8d-49fb-80dc-2f2b9dc3c7cc" width="25%"/>
+<img src="https://github.com/user-attachments/assets/7b07264d-4a27-44dd-9381-0d08c0295fd9" width="25%"/>
 
 
 
