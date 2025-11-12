@@ -25,7 +25,9 @@
 - для потоков Flac больше 1000кбит обновить файлы как написано в инструкции здесь :
 https://4pda.to/forum/index.php?showtopic=1010378&view=findpost&p=125839228
 
-Путь к папке (в Ардуино другой путь) C:\Users\ваше имя\.platformio\packages\framework-arduinoespressif32-libs\esp32s3\lib
+Путь к папке для VSC C:\Users\ваше имя\.platformio\packages\framework-arduinoespressif32-libs\esp32s3\lib
+
+Для Ардуино  C:\Users\User\AppData\Local\Arduino15\packages\esp32\tools\esp32-arduino-libs\idf-release_v5.1-33fbade6\esp32s3\lib\
 - смена фона, настройка положения и цвета текста с веба без перезагрузки
 - настройка размера, цвета, логики движения и положения стрелок вуметра с веба
 - загрузка и удаление файлов с веб
