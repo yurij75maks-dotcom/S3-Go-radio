@@ -14,7 +14,7 @@
 //#define DISPLAY_ST7789_172_0 //вертикальный установить TFT_ROTATION 0 
 //#define DISPLAY_ST7789_76_3  //горизонтально установить TFT_ROTATION 3
 //#define DISPLAY_ST7789_76_0   //вертикальный установить TFT_ROTATION 0 
-//#define DISPLAY_ILI9341
+
 //#define DISPLAY_ST7735
 
 #define TFT_ROTATION 0       // 0-3: rotation angle
