@@ -33,10 +33,16 @@ https://4pda.to/forum/index.php?showtopic=1010378&view=findpost&p=125839228
 - загрузка и удаление файлов с веб
 - настройка пинов платы, поворот и выбор типа дисплея (может потребоваться коректировка кода) в файле S3_Go_radio\src\config.h
 -  управление 5 кнопок(планируется добавить энкодер)
+.................................................................................................................
+.................................................................................................................
 
 Установка с помощью ArduinoIDE:
 - ядро esp32 3.3.3
-- библиотеки как на фото
+- Библиотеки:
+- https://github.com/Bodmer/TJpg_Decoder.git
+- https://github.com/schreibfaul1/ESP32-audioI2S/archive/refs/tags/3.4.3.zip
+- https://github.com/moononournation/Arduino_GFX.git
+- https://github.com/bblanchon/ArduinoJson.git
 <img src="https://github.com/user-attachments/assets/11256322-8300-48e9-8ea2-1e4eb4a08934" width="25%"/>
 
 - выбрать плату esp32s3
@@ -45,8 +51,10 @@ https://4pda.to/forum/index.php?showtopic=1010378&view=findpost&p=125839228
 
 - прошить litlfs как в инструкции здесь: 
 https://randomnerdtutorials.com/arduino-ide-2-install-esp32-littlefs/
+.................................................................................................................
+.................................................................................................................
 
-Прошивать с помощью программы VSC.
+Прошивка с помощью программы VSC.
 https://code.visualstudio.com/
 Запустить программу, установить PlatformIO IDE.
 Установить https://git-scm.com/install/windows
@@ -55,7 +63,7 @@ https://code.visualstudio.com/
 Открыть папку в программе VSC.
 Подождать скачивание библиотек и ядра.
 Прошить код.
-Прошить файловую систему (data). нажать "upload filesystem image". В папку data можно положить плейлисты и фото. Или же потом с веба загрузить.
+Прошить файловую систему (data). нажать "upload filesystem image". В папку data можно положить плейлисты и фото (имя не должно написано кирилицей). Или же потом с веба загрузить.
 
 <img src="https://github.com/user-attachments/assets/c880c923-1d6f-4cac-8eb3-e780807a8c41" width="25%"/>
 
@@ -70,6 +78,7 @@ https://code.visualstudio.com/
 - https://github.com/Bodmer/TJpg_Decoder.git
 - https://github.com/schreibfaul1/ESP32-audioI2S/archive/refs/tags/3.4.3.zip
 - https://github.com/moononournation/Arduino_GFX.git
+- https://github.com/bblanchon/ArduinoJson.git
 - бонус русские шрифты https://github.com/immortalserg/AdafruitGFXRusFonts
 Как поменять шрифт: Копируем новый шрифт в папку "src". Прописываем в начале файла main.cpp имя нового шрифта например #include "Bahamas8.h", потом ищем в коде старый шрифт через ctrl+f, и меняем его имя. ВНИМАНИЕ!!! Внутри файла шрифта может быть прописано по другому, "const uint8_t Bahamas8pt8bBitmaps[] PROGMEM = {", значит нам надо взять "Bahamas8pt8b", получится так:
 gfx->setFont(&Bahamas8pt8b);
