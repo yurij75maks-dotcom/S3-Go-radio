@@ -41,7 +41,7 @@ https://4pda.to/forum/index.php?showtopic=1010378&view=findpost&p=125839228
 - ядро esp32 3.3.3
 - Библиотеки:
 - https://github.com/Bodmer/TJpg_Decoder.git
-- https://github.com/schreibfaul1/ESP32-audioI2S/archive/refs/tags/3.4.3.zip
+- https://github.com/schreibfaul1/ESP32-audioI2S/archive/refs/tags/3.4.2.zip
 - https://github.com/moononournation/Arduino_GFX.git
 - https://github.com/bblanchon/ArduinoJson.git
 <img src="https://github.com/user-attachments/assets/11256322-8300-48e9-8ea2-1e4eb4a08934" width="25%"/>
@@ -77,7 +77,7 @@ https://code.visualstudio.com/
 
 Библиотеки:
 - https://github.com/Bodmer/TJpg_Decoder.git
-- https://github.com/schreibfaul1/ESP32-audioI2S/archive/refs/tags/3.4.3.zip
+- https://github.com/schreibfaul1/ESP32-audioI2S/archive/refs/tags/3.4.2.zip
 - https://github.com/moononournation/Arduino_GFX.git
 - https://github.com/bblanchon/ArduinoJson.git
 - бонус русские шрифты https://github.com/immortalserg/AdafruitGFXRusFonts
