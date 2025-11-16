@@ -56,6 +56,7 @@ https://randomnerdtutorials.com/arduino-ide-2-install-esp32-littlefs/
 .................................................................................................................
 
 Прошивка с помощью программы VSC.
+
 https://code.visualstudio.com/
 Запустить программу, установить PlatformIO IDE.
 Установить https://git-scm.com/install/windows
