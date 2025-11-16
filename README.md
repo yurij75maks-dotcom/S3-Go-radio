@@ -34,6 +34,22 @@ https://4pda.to/forum/index.php?showtopic=1010378&view=findpost&p=125839228
 - настройка пинов платы, поворот и выбор типа дисплея (может потребоваться коректировка кода) в файле S3_Go_radio\src\config.h
 -  управление 5 кнопок(планируется добавить энкодер)
 
+Установка с помощью ArduinoIDE:
+- ядро 3.3.2
+- библиотеки
+- выбрать плату esp32s3
+- выставить настройки как на фото
+<img src="https://github.com/user-attachments/assets/0c790d70-05d2-48cf-ab00-41063c1f285d" width="25%"/>
+
+- прошить litlfs как в инструкции здесь: 
+https://randomnerdtutorials.com/arduino-ide-2-install-esp32-littlefs/
+
+Дублирую коротко:
+- скачать по этой ссылке https://github.com/earlephilhower/arduino-littlefs-upload файл как на фото
+![arduino-littlefs-upload-vsix-file](https://github.com/user-attachments/assets/389a2de8-55f1-44d5-bbbe-055bed0db145)
+На компьютере перейдите по следующему пути: C:\Users\<имя пользователя>\.arduinoIDE\. Создайте новую папку с именем plugins, если вы ещё этого не сделали.
+
+
 
 Прошивать с помощью программы VSC.
 https://code.visualstudio.com/
