@@ -52,6 +52,7 @@ C\Users\User\AppData\Local\Arduino15\packages\esp32\tools\esp32-arduino-libs\idf
 - выставить настройки как на фото
 <img src="https://github.com/user-attachments/assets/0c790d70-05d2-48cf-ab00-41063c1f285d" width="25%"/>
 - прошить код
+- 
 - прошить litlfs как в инструкции здесь: 
 https://randomnerdtutorials.com/arduino-ide-2-install-esp32-littlefs/
 .................................................................................................................
