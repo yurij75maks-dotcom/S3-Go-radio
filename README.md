@@ -42,8 +42,8 @@ C\Users\User\AppData\Local\Arduino15\packages\esp32\tools\esp32-arduino-libs\idf
 .................................................................................................................
 
 Установка с помощью ArduinoIDE:
-- ядро esp32 3.3.3
-- Библиотеки:
+- установить ядро esp32 3.3.3
+- установить библиотеки:
 - https://github.com/Bodmer/TJpg_Decoder.git
 - https://github.com/schreibfaul1/ESP32-audioI2S/archive/refs/tags/3.4.2.zip
 - https://github.com/moononournation/Arduino_GFX.git
@@ -55,7 +55,7 @@ C\Users\User\AppData\Local\Arduino15\packages\esp32\tools\esp32-arduino-libs\idf
 <img src="https://github.com/user-attachments/assets/0c790d70-05d2-48cf-ab00-41063c1f285d" width="25%"/>
 - прошить код
 - 
-- прошить litlfs как в инструкции здесь: 
+- прошить litlfs как в инструкции здесь (или другим способом): 
 https://randomnerdtutorials.com/arduino-ide-2-install-esp32-littlefs/
 .................................................................................................................
 .................................................................................................................
