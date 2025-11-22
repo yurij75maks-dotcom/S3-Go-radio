@@ -1,5 +1,3 @@
-
-
 #include <Arduino_GFX_Library.h>
 #include <WiFi.h>
 #include <WebServer.h>
@@ -365,7 +363,7 @@ bool connectToWiFi() {
     WiFi.softAP("S3-Go!-light-Setup", "12345678");
     Serial.print("Setup AP IP: ");
     Serial.println(WiFi.softAPIP());
-    wifiConnected = false;  // 👈 добавь
+    wifiConnected = false;
     return false;
   }
   
@@ -439,7 +437,9 @@ void loadPlaylistMetadata(String filename) {
   if (!filename.startsWith("/")) filename = "/" + filename;
 
   if (!LittleFS.exists(filename)) {
-    Serial.printf("⚠️ Playlist file %s not found!\n", filename.c_str());
+    Serial.printf("⚠️ Playlist file %s not found - creating empty playlist\n", filename.c_str());
+    currentPlaylistFile = filename;
+    streamCount = 0;
     return;
   }
 
@@ -447,6 +447,10 @@ void loadPlaylistMetadata(String filename) {
   streamCount = 0;
   
   File f = LittleFS.open(filename, "r");
+  if (!f) {
+    Serial.printf("⚠️ Failed to open playlist file %s\n", filename.c_str());
+    return;
+  }
   
   while (f.available() && streamCount < 100) {
     String line = f.readStringUntil('\n');
@@ -822,21 +826,25 @@ bool tpgOutputToSprite(int16_t x, int16_t y, uint16_t w, uint16_t h, uint16_t* b
 // === Load background ===
 void loadBackground() {
   Serial.printf("Loading: %s\n", currentBackground.c_str());
-
-  File file = LittleFS.open(currentBackground, "r");
-  if (!file) {
-    Serial.println("Failed to open file");
+  if (!LittleFS.exists(currentBackground)) {
+    Serial.println("Background file not found - filling with default color");
+    bgSprite->fillScreen(RGB565_BLACK);
     return;
   }
-
+  File file = LittleFS.open(currentBackground, "r");
+  if (!file) {
+    Serial.println("Failed to open file - filling with default color");
+    bgSprite->fillScreen(RGB565_BLACK);
+    return;
+  }
   size_t fileSize = file.size();
   uint8_t* jpegData = (uint8_t*)ps_malloc(fileSize);
   if (!jpegData) {
     Serial.println("Memory allocation failed");
+    bgSprite->fillScreen(RGB565_BLACK);
     file.close();
     return;
   }
-
   file.read(jpegData, fileSize);
   file.close();
   uint16_t imgW, imgH;
@@ -1213,14 +1221,6 @@ void handleAPIStreams() {
   server.send(200, "application/json", getStreamsList());
 }
 
-// void handleAPIBackgrounds() {
-//   server.send(200, "application/json", getBackgroundsList());
-// }
-
-// void handleAPIPlaylists() {
-//   server.send(200, "application/json", getPlaylistsList());
-// }
-
 void handleAPINetwork() {
   server.send(200, "application/json", getNetworkInfo());
 }
@@ -1585,9 +1585,21 @@ void setup() {
   digitalWrite(TFT_BL, TFT_BRIGHTNESS);
 
   // === File System ===
-  if (!LittleFS.begin()) {
-    Serial.println("FS mount failed!");
-    while (true) delay(1000);
+  if (!LittleFS.begin(false)) {
+    Serial.println("LittleFS mount failed - trying to format...");
+    if (LittleFS.begin(true)) {
+      Serial.println("✅ LittleFS formatted and mounted successfully!");
+    } else {
+      Serial.println("❌ LittleFS format failed!");
+      gfx->fillScreen(RGB565_RED);
+      gfx->setFont(&FreeSerifBoldItalic14pt8b);
+      gfx->setTextColor(RGB565_WHITE);
+      gfx->setCursor(20, 100);
+      gfx->print("FS ERROR!");
+      gfx->setCursor(20, 130);
+      gfx->print("Check partition");
+      while (true) delay(1000);
+    }
   }
   Serial.println("LittleFS mounted");
   Serial.printf("Total space: %d bytes\n", LittleFS.totalBytes());
@@ -1616,13 +1628,25 @@ void setup() {
 
   // === Sprites ===
   createSprites();
-  loadBackground();
+  loadBackground();  // Теперь безопасно - создаст черный фон если файла нет
   
   // === WiFi ===
   bool wifi_ok = connectToWiFi();
   
   // === Playlist ===
-  loadPlaylistMetadata(currentPlaylistFile);
+  loadPlaylistMetadata(currentPlaylistFile);  // Теперь безопасно - создаст пустой плейлист
+  
+  if (streamCount == 0) {
+    Serial.println("⚠️ No streams in playlist. Add playlist.csv via web interface!");
+    gfx->setFont(&FreeSerifBoldItalic14pt8b);
+    gfx->setTextColor(RGB565_YELLOW);
+    gfx->setCursor(10, 100);
+    gfx->print("No playlist found");
+    gfx->setCursor(10, 130);
+    gfx->print("Upload playlist.csv");
+    gfx->setCursor(10, 160);
+    gfx->print("via web interface");
+  }
   
   // === Audio ===
   audio.setPinout(AUDIO_I2S_BCLK, AUDIO_I2S_LRCLK, AUDIO_I2S_DOUT);
@@ -1642,14 +1666,23 @@ void setup() {
   // === Display Task ===
   xTaskCreatePinnedToCore(displayTask, "Display Task", 4096, NULL, 2, NULL, 1);
   
-  // === Auto-start last station ===
+  // === Auto-start last station (только если есть плейлист и WiFi) ===
   if(streamCount > 0 && wifiConnected){
     startRadio();
+  } else {
+    Serial.println("⚠️ Radio not started: no playlist or WiFi");
   }
   
   Serial.println("Setup completed!\n");
   drawVolumeDisplay();
-  showAction("System Ready");
+  
+  if (streamCount > 0 && wifiConnected) {
+    showAction("System Ready");
+  } else if (!wifiConnected) {
+    showAction("WiFi Setup Mode", RGB565_ORANGE);
+  } else {
+    showAction("Upload Playlist", RGB565_YELLOW);
+  }
 }
 
 // === Main Loop ===
