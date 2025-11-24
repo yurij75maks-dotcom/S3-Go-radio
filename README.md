@@ -17,7 +17,7 @@
 https://4pda.to/forum/index.php?showtopic=1010378&view=findpost&p=125839228
 
 Путь к папке для VSC 
-C\Users\User\.platformio\packages\framework-arduinoespressif32-libs\esp32s3\lib\
+C\Users\User\ .platformio\packages\framework-arduinoespressif32-libs\esp32s3\lib\
 
 Для Ардуино  
 C\Users\User\AppData\Local\Arduino15\packages\esp32\tools\esp32-arduino-libs\idfrelease_v5.1-33fbade6\esp32s3\lib\
